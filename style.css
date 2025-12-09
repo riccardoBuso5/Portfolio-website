@@ -45,7 +45,6 @@ body {
     color: var(--text-dark);
     background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
     min-height: 100vh;
-    padding-top: 120px;
 }
 
 /* ===================================
@@ -56,12 +55,11 @@ body {
     background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2952 100%);
     color: var(--white);
     padding-top: 0;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    box-shadow: var(--shadow-md);
+    width: 100%;
 }
 
 .navbar {
@@ -119,7 +117,7 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2952 100%);
     color: var(--white);
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     text-align: center;
     border-bottom: 3px solid var(--secondary);
 }
@@ -199,6 +197,7 @@ body {
     margin-bottom: 2rem;
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
+    scroll-margin-top: 200px;
 }
 
 .section:hover {
