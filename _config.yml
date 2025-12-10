@@ -1,0 +1,20 @@
+# Jekyll Configuration
+title: Portfolio - Curriculum Vitae
+author: Riccardo Buso
+description: Portfolio personale con curriculum vitae
+url: https://riccardoBuso5.github.io
+baseurl: /Portfolio-website
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
