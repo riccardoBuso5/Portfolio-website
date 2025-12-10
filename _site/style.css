@@ -7,20 +7,22 @@
    VARIABILI E COLORI
    =================================== */
 
-$primary: #2563eb;
-$primary-light: #3b82f6;
-$secondary: #0ea5e9;
-$accent: #7c3aed;
-$danger: #ec4899;
-$bg-light: #f8fafc;
-$bg-dark: #0f172a;
-$text-dark: #1e293b;
-$text-light: #475569;
-$border: #e2e8f0;
-$white: #ffffff;
-$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-$shadow-md: 0 6px 24px rgba(0, 0, 0, 0.12);
-$shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
+:root {
+    --primary: #2563eb;       /* Blu principale */
+    --primary-light: #3b82f6; /* Blu chiaro */
+    --secondary: #0ea5e9;     /* Cyan/Azzurro */
+    --accent: #7c3aed;        /* Viola */
+    --danger: #ec4899;        /* Rosa */
+    --bg-light: #f8fafc;      /* Grigio chiaro */
+    --bg-dark: #0f172a;       /* Grigio scuro */
+    --text-dark: #1e293b;     /* Testo scuro */
+    --text-light: #475569;    /* Testo chiaro */
+    --border: #e2e8f0;        /* Bordi */
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
 
 /* ===================================
    BASE STYLES
@@ -40,7 +42,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
                  'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: $text-dark;
+    color: var(--text-dark);
     background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
     min-height: 100vh;
 }
@@ -50,16 +52,14 @@ body {
    =================================== */
 
 .header {
-    background: linear-gradient(135deg, $bg-dark 0%, #1a2952 100%);
-    color: $white;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2952 100%);
+    color: var(--white);
     padding-top: 0;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
     width: 100%;
-    box-shadow: $shadow-md;
 }
 
 .navbar {
@@ -78,36 +78,36 @@ body {
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
+}
 
-    a {
-        color: $white;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-        position: relative;
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
 
-        &:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, $secondary, $primary-light);
-            transition: width 0.3s ease;
-        }
+.nav-links a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary), var(--primary-light));
+    transition: width 0.3s ease;
+}
 
-        &:hover {
-            background: rgba(255, 255, 255, 0.1);
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
 
-            &:before {
-                width: 100%;
-            }
-        }
-    }
+.nav-links a:hover:before {
+    width: 100%;
 }
 
 /* ===================================
@@ -115,12 +115,11 @@ body {
    =================================== */
 
 .hero {
-    background: linear-gradient(135deg, $bg-dark 0%, #1a2952 100%);
-    color: $white;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2952 100%);
+    color: var(--white);
     padding: 2rem 2rem;
     text-align: center;
-    border-bottom: 3px solid $secondary;
-    margin-top: 80px;
+    border-bottom: 3px solid var(--secondary);
 }
 
 .hero-content {
@@ -132,7 +131,7 @@ body {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, $white, $secondary);
+    background: linear-gradient(135deg, var(--white), var(--secondary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -142,7 +141,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: $secondary;
+    color: var(--secondary);
     margin-bottom: 1rem;
     font-weight: 600;
     animation: slideInUp 0.6s ease 0.1s both;
@@ -192,28 +191,28 @@ body {
    =================================== */
 
 .section {
-    background: $white;
+    background: var(--white);
     border-radius: 12px;
     padding: 3rem;
     margin-bottom: 2rem;
-    box-shadow: $shadow-sm;
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
     scroll-margin-top: 200px;
+}
 
-    &:hover {
-        box-shadow: $shadow-md;
-        transform: translateY(-2px);
-    }
+.section:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
 
-    h2 {
-        font-size: 2rem;
-        color: $primary;
-        margin-bottom: 2rem;
-        padding-bottom: 1rem;
-        border-bottom: 3px solid $secondary;
-        display: inline-block;
-        font-weight: 700;
-    }
+.section h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--secondary);
+    display: inline-block;
+    font-weight: 700;
 }
 
 /* ===================================
@@ -237,27 +236,27 @@ body {
     height: 200px;
     border-radius: 12px;
     object-fit: cover;
-    border: 4px solid $primary;
+    border: 4px solid var(--primary);
     box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
     transition: all 0.3s ease;
+}
 
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
-    }
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
 }
 
 .about-text p {
     margin-bottom: 1.5rem;
-    color: $text-light;
+    color: var(--text-light);
     line-height: 1.8;
     font-size: 1.05rem;
+}
 
-    &:first-child {
-        font-size: 1.2rem;
-        color: $primary;
-        font-weight: 600;
-    }
+.about-text p:first-child {
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 600;
 }
 
 /* ===================================
@@ -271,25 +270,18 @@ body {
 }
 
 .education-card {
-    background: linear-gradient(135deg, $bg-light 0%, rgba(14, 165, 233, 0.05) 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(14, 165, 233, 0.05) 100%);
     padding: 1.5rem;
-    border-left: 5px solid $primary;
+    border-left: 5px solid var(--primary);
     border-radius: 8px;
     transition: all 0.3s ease;
     cursor: pointer;
+}
 
-    &:hover {
-        box-shadow: $shadow-md;
-        transform: translateX(4px);
-        background: linear-gradient(135deg, #f0f9ff 0%, rgba(14, 165, 233, 0.1) 100%);
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        color: $primary;
-        margin: 0;
-        font-weight: 700;
-    }
+.education-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+    background: linear-gradient(135deg, #f0f9ff 0%, rgba(14, 165, 233, 0.1) 100%);
 }
 
 .education-header {
@@ -301,9 +293,16 @@ body {
     flex-wrap: wrap;
 }
 
+.education-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin: 0;
+    font-weight: 700;
+}
+
 .education-year {
-    background: $primary;
-    color: $white;
+    background: var(--primary);
+    color: var(--white);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -312,14 +311,14 @@ body {
 }
 
 .education-school {
-    color: $secondary;
+    color: var(--secondary);
     font-weight: 600;
     margin: 0.5rem 0 0;
     font-size: 1rem;
 }
 
 .education-description {
-    color: $text-light;
+    color: var(--text-light);
     line-height: 1.8;
     margin: 1rem 0 0;
 }
@@ -335,51 +334,51 @@ body {
 }
 
 .hobby-card {
-    background: linear-gradient(135deg, $bg-light 0%, rgba(124, 58, 237, 0.05) 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(124, 58, 237, 0.05) 100%);
     padding: 1.5rem;
     border-radius: 12px;
-    border: 2px solid $border;
+    border: 2px solid var(--border);
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+}
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, $primary, $accent, $secondary);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-    }
+.hobby-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
 
-    &:hover {
-        box-shadow: $shadow-lg;
-        transform: translateY(-8px);
-        border-color: $accent;
-        background: linear-gradient(135deg, #f5f3ff 0%, rgba(124, 58, 237, 0.1) 100%);
+.hobby-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    background: linear-gradient(135deg, #f5f3ff 0%, rgba(124, 58, 237, 0.1) 100%);
+}
 
-        &::before {
-            transform: scaleX(1);
-        }
-    }
+.hobby-card:hover::before {
+    transform: scaleX(1);
+}
 
-    h3 {
-        font-size: 1.3rem;
-        color: $accent;
-        margin-bottom: 1rem;
-        font-weight: 700;
-    }
+.hobby-card h3 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
 
-    p {
-        color: $text-light;
-        line-height: 1.8;
-        font-size: 1rem;
-    }
+.hobby-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
 /* ===================================
@@ -394,37 +393,37 @@ body {
 }
 
 .contact-item {
-    background: linear-gradient(135deg, $bg-light 0%, rgba(14, 165, 233, 0.05) 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(14, 165, 233, 0.05) 100%);
     padding: 1.5rem;
     border-radius: 10px;
-    border-left: 4px solid $primary;
+    border-left: 4px solid var(--primary);
     transition: all 0.3s ease;
+}
 
-    &:hover {
-        box-shadow: $shadow-md;
-        transform: translateY(-4px);
-        background: linear-gradient(135deg, #f0f9ff 0%, rgba(14, 165, 233, 0.1) 100%);
-    }
+.contact-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, #f0f9ff 0%, rgba(14, 165, 233, 0.1) 100%);
+}
 
-    strong {
-        display: block;
-        color: $primary;
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-    }
+.contact-item strong {
+    display: block;
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
 
-    a {
-        color: $secondary;
-        text-decoration: none;
-        font-weight: 600;
-        word-break: break-all;
-        transition: all 0.2s ease;
+.contact-item a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    word-break: break-all;
+    transition: all 0.2s ease;
+}
 
-        &:hover {
-            color: $primary;
-            text-decoration: underline;
-        }
-    }
+.contact-item a:hover {
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 /* ===================================
@@ -432,16 +431,16 @@ body {
    =================================== */
 
 .footer {
-    background: $bg-dark;
-    color: $white;
+    background: var(--bg-dark);
+    color: var(--white);
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
     font-size: 0.95rem;
+}
 
-    p {
-        margin: 0;
-    }
+.footer p {
+    margin: 0;
 }
 
 /* ===================================
@@ -459,10 +458,10 @@ body {
 
     .section {
         padding: 1.5rem;
+    }
 
-        h2 {
-            font-size: 1.5rem;
-        }
+    .section h2 {
+        font-size: 1.5rem;
     }
 
     .about-content {
@@ -478,10 +477,10 @@ body {
     .nav-links {
         gap: 0.5rem;
         font-size: 0.9rem;
+    }
 
-        a {
-            padding: 0.4rem 0.8rem;
-        }
+    .nav-links a {
+        padding: 0.4rem 0.8rem;
     }
 
     .education-header {
@@ -528,11 +527,11 @@ body {
     .nav-links {
         flex-direction: column;
         gap: 0;
+    }
 
-        a {
-            width: 100%;
-            text-align: center;
-        }
+    .nav-links a {
+        width: 100%;
+        text-align: center;
     }
 
     .about-text p {
@@ -566,37 +565,54 @@ body {
 
 @media print {
     body {
-        background: $white;
-        color: $text-dark;
+        background: var(--white);
+        color: var(--text-dark);
     }
 
     .header {
         box-shadow: none;
-        border-bottom: 2px solid $border;
+        border-bottom: 2px solid var(--border);
     }
 
     .navbar {
-        background: $white;
+        background: var(--white);
+    }
 
-        a {
-            color: $primary;
-        }
+    .nav-links a {
+        color: var(--primary);
     }
 
     .section {
         box-shadow: none;
-        border: 1px solid $border;
+        border: 1px solid var(--border);
         page-break-inside: avoid;
     }
 
     .footer {
-        background: $white;
-        color: $text-dark;
-        border-top: 2px solid $border;
+        background: var(--white);
+        color: var(--text-dark);
+        border-top: 2px solid var(--border);
     }
 
     a {
-        color: $primary;
+        color: var(--primary);
         text-decoration: none;
     }
 }
+
+
+/* ---------------------------
+   Accessibility & Utilities
+   --------------------------- */
+
+.name {
+	letter-spacing: -0.6px;
+}
+
+a:focus,
+a:hover {
+	outline: none;
+	text-decoration: underline;
+}
+
+
