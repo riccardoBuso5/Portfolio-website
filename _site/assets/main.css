@@ -50,6 +50,7 @@ body {
   background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2952 100%);
   color: var(--white);
   padding-top: 0;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
